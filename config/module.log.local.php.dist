@@ -7,9 +7,5 @@
 namespace MSBios\Db;
 
 return [
-    'db' => [
-        'dsn' => 'mysql:dbname=;host=',
-        'username' => null,
-        'password' => null,
-    ],
+    // ...
 ];
