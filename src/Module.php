@@ -8,6 +8,7 @@ namespace MSBios\Log;
 use MSBios\ModuleInterface;
 use Zend\Loader\AutoloaderFactory;
 use Zend\Loader\StandardAutoloader;
+
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Stdlib\ArrayUtils;
 
