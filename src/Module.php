@@ -11,7 +11,6 @@ use Zend\Loader\StandardAutoloader;
 use Zend\ModuleManager\Feature\AutoloaderProviderInterface;
 use Zend\Stdlib\ArrayUtils;
 
-
 /**
  * Class Module
  * @package MSBios\Log

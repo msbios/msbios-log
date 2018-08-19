@@ -4,8 +4,8 @@
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
 
-namespace MSBios\Db;
+namespace MSBios\Log;
 
 return [
-
+    // ...
 ];
