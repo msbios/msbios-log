@@ -12,32 +12,5 @@ use Zend\Log\Logger;
 return [
     'logs' => [
         'enabled' => true,
-        'MSBios\Logger' => [
-            'writers' => [
-                [
-                    'name' => 'stream',
-                    'priority' => Logger::INFO,
-                    'options' => [
-                        'stream' => './data/logs/logger.log',
-                        'formatter' => [
-                            'name' => Simple::class,
-                            'options' => [
-                                'format' => '%timestamp% %priorityName% (%priority%): %message% %extra%',
-                                'dateTimeFormat' => 'c',
-                            ],
-                        ],
-                        'filters' => [
-                            'priority' => [
-                                'name' => 'priority',
-                                'options' => [
-                                    'operator' => '<=',
-                                    'priority' => Logger::INFO,
-                                ],
-                            ],
-                        ],
-                    ],
-                ],
-            ],
-        ],
     ],
 ];
