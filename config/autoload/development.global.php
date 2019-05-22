@@ -7,6 +7,9 @@
 
 namespace MSBios\Log;
 
+use Zend\Log\Formatter\Simple;
+use Zend\Log\Logger;
+
 return [
     \MSBios\Assetic\Module::class => [
 
@@ -32,6 +35,37 @@ return [
             // imgs
             'img/zf-logo-mark.svg' =>
                 __DIR__ . '/../../vendor/msbios/application/themes/default/public/img/zf-logo-mark.svg',
+        ],
+    ],
+
+    'logs' => [
+        'enabled' => true,
+        'MSBios\Logger' => [
+            'writers' => [
+                [
+                    'name' => 'stream',
+                    'priority' => Logger::INFO,
+                    'options' => [
+                        'stream' => './data/logs/logger.log',
+                        'formatter' => [
+                            'name' => Simple::class,
+                            'options' => [
+                                'format' => '%timestamp% %priorityName% (%priority%): %message% %extra%',
+                                'dateTimeFormat' => 'c',
+                            ],
+                        ],
+                        'filters' => [
+                            'priority' => [
+                                'name' => 'priority',
+                                'options' => [
+                                    'operator' => '<=',
+                                    'priority' => Logger::INFO,
+                                ],
+                            ],
+                        ],
+                    ],
+                ],
+            ],
         ],
     ],
 ];

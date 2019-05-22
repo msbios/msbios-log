@@ -30,12 +30,9 @@ class ConfigProvider
     public function getDependencyConfig()
     {
         return [
-            'factories' => [
-                // ...
+            'abstract_factories' => [
+                LoggerAbstractServiceFactory::class
             ],
-            'aliases' => [
-                // ...
-            ]
         ];
     }
 }

@@ -36,5 +36,10 @@ if (file_exists(__DIR__ . '/../config/development.config.php')) {
     $appConfig = ArrayUtils::merge($appConfig, require __DIR__ . '/../config/development.config.php');
 }
 
-// Run the application!
-Application::init($appConfig)->run();
+/** @var \Zend\Mvc\ApplicationInterface $application */
+$application = Application::init($appConfig);
+
+/** @var \Zend\Log\LoggerInterface $logger */
+$logger = $application->getServiceManager()->get('MSBios\Logger');
+// \MSBios\Log\ProxyLogger::setEnabled(true);
+$logger->info('Test information message');
