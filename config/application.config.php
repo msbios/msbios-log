@@ -8,7 +8,9 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
-
+        'MSBios\Session',
+        'Zend\Session',
+        'Zend\Validator',
         'Zend\Mvc\Plugin\FilePrg',
         'Zend\Form',
         'Zend\Router',
