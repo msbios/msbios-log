@@ -7,13 +7,13 @@
 namespace MSBios\Log;
 
 use Interop\Container\ContainerInterface;
-use Zend\Log\LoggerAbstractServiceFactory as DefaultLoggerAbstractServiceFactory;
+use Zend\Log\LoggerAbstractServiceFactory;
 
 /**
- * Class LoggerAbstractServiceFactory
+ * Class ProxyLoggerAbstractServiceFactory
  * @package MSBios\Log
  */
-class LoggerAbstractServiceFactory extends DefaultLoggerAbstractServiceFactory
+class ProxyLoggerAbstractServiceFactory extends LoggerAbstractServiceFactory
 {
     /** @var string */
     protected $configKey = 'logs';

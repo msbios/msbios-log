@@ -31,7 +31,7 @@ class ConfigProvider
     {
         return [
             'abstract_factories' => [
-                LoggerAbstractServiceFactory::class
+                ProxyLoggerAbstractServiceFactory::class
             ],
         ];
     }

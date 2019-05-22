@@ -40,6 +40,6 @@ if (file_exists(__DIR__ . '/../config/development.config.php')) {
 $application = Application::init($appConfig);
 
 /** @var \Zend\Log\LoggerInterface $logger */
-$logger = $application->getServiceManager()->get('MSBios\Logger');
+$logger = $application->getServiceManager()->get('MSBios\Proxy\Logger');
 // \MSBios\Log\ProxyLogger::setEnabled(true);
 $logger->info('Test information message');

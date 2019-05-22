@@ -12,7 +12,7 @@ use Zend\Log\Logger;
 return [
     'logs' => [
         'enabled' => false,
-        'MSBios\Logger' => [
+        'MSBios\Proxy\Logger' => [
             'writers' => [
                 [
                     'name' => 'stream',
