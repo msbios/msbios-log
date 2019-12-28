@@ -25,9 +25,7 @@ class LoggerAwareInitializer implements InitializerInterface
      */
     public function __invoke(ContainerInterface $container, $instance)
     {
-        if ($instance instanceof ProxyLoggerAwareInterface) {
-            $instance->setLogger($container->get('MSBios\Proxy\Logger'));
-        } else if ($instance instanceof LoggerAwareInterface) {
+        if ($instance instanceof LoggerAwareInterface) {
             $instance->setLogger($container->get(Logger::class));
         }
     }

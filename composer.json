@@ -24,9 +24,10 @@
     }
   },
   "require": {
-    "zendframework/zend-log": "^2.10",
+    "php": "^7.1",
+    "zendframework/zend-log": "^2.12",
     "jhuet/zdt-logger-module": "^1.0",
-    "firephp/firephp-core": "^0.4.0",
+    "firephp/firephp-core": "^0.5",
     "ccampbell/chromephp": "^4.1",
     "msbios/msbios": "^1.0"
   },
@@ -51,5 +52,8 @@
     "zf": {
       "component": "MSBios\\Log"
     }
+  },
+  "config": {
+    "sort-packages": true
   }
 }

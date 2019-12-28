@@ -10,7 +10,27 @@ use Zend\Log\Formatter\Simple;
 use Zend\Log\Logger;
 
 return [
-    'logs' => [
-        'enabled' => true,
+    'log' => [
+        'stream' => [
+            'name' => Stream::class,
+            'options' => [
+                'stream' => "./data/logs/errors.log",
+                'formatter' => [
+                    'name' => Simple::class,
+                    'options' => [
+                        'format' => '%timestamp% %priorityName% (%priority%): %message% %extra%',
+                        'dateTimeFormat' => 'c', // 'Y-m-d H:i:s',
+                    ],
+                ],
+                'filters' => [
+                    'priority' => [
+                        'name' => Priority::class,
+                        'options' => [
+                            'priority' => Logger::ERR,
+                        ],
+                    ],
+                ],
+            ],
+        ],
     ],
 ];
