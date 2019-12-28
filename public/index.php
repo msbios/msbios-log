@@ -1,5 +1,7 @@
 <?php
 
+use Zend\Log\Logger;
+use Zend\Log\LoggerInterface;
 use Zend\Mvc\Application;
 use Zend\Stdlib\ArrayUtils;
 
@@ -38,8 +40,8 @@ if (file_exists(__DIR__ . '/../config/development.config.php')) {
 
 /** @var \Zend\Mvc\ApplicationInterface $application */
 $application = Application::init($appConfig);
+$application->run();
 
-/** @var \Zend\Log\LoggerInterface $logger */
-$logger = $application->getServiceManager()->get('MSBios\Proxy\Logger');
-// \MSBios\Log\ProxyLogger::setEnabled(true);
-$logger->info('Test information message');
+/** @var LoggerInterface $logger */
+$logger = $application->getServiceManager()->get(Logger::class);
+$logger->info('Application was rendered');

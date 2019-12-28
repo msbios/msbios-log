@@ -11,22 +11,24 @@ use Zend\Log\Writer\Stream;
 
 return [
     'log' => [
-        'stream' => [
-            'name' => Stream::class,
-            'options' => [
-                'stream' => "./data/logs/errors.log",
-                'formatter' => [
-                    'name' => Simple::class,
-                    'options' => [
-                        'format' => '%timestamp% %priorityName% (%priority%): %message% %extra%',
-                        'dateTimeFormat' => 'c', // 'Y-m-d H:i:s',
-                    ],
-                ],
-                'filters' => [
-                    'priority' => [
-                        'name' => Priority::class,
+        'writers' => [
+            'stream' => [
+                'name' => Stream::class,
+                'options' => [
+                    'stream' => "./data/logs/errors.log",
+                    'formatter' => [
+                        'name' => Simple::class,
                         'options' => [
-                            'priority' => Logger::ERR,
+                            'format' => '%timestamp% %priorityName% (%priority%): %message% %extra%',
+                            'dateTimeFormat' => 'c', // 'Y-m-d H:i:s',
+                        ],
+                    ],
+                    'filters' => [
+                        'priority' => [
+                            'name' => Priority::class,
+                            'options' => [
+                                'priority' => Logger::ERR,
+                            ],
                         ],
                     ],
                 ],

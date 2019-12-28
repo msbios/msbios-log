@@ -4,19 +4,15 @@
  * @access protected
  * @author Judzhin Miles <info[woof-woof]msbios.com>
  */
-
 namespace MSBios\Log;
 
-use Zend\Log\Formatter\Simple;
 use Zend\Log\Logger;
 
 return [
     \MSBios\Assetic\Module::class => [
-
         'paths' => [
             __DIR__ . '/../../themes/limitless/public',
         ],
-
         'maps' => [
             // css
             'css/bootstrap.min.css' =>
@@ -38,29 +34,15 @@ return [
         ],
     ],
 
-    'logs' => [
-        'enabled' => true,
-        'MSBios\Logger' => [
-            'writers' => [
-                [
-                    'name' => 'stream',
-                    'priority' => Logger::INFO,
-                    'options' => [
-                        'stream' => './data/logs/logger.log',
-                        'formatter' => [
-                            'name' => Simple::class,
+    'log' => [
+        'writers' => [
+            'stream' => [
+                'options' => [
+                    'stream' => "./data/logs/info.log",
+                    'filters' => [
+                        'priority' => [
                             'options' => [
-                                'format' => '%timestamp% %priorityName% (%priority%): %message% %extra%',
-                                'dateTimeFormat' => 'c',
-                            ],
-                        ],
-                        'filters' => [
-                            'priority' => [
-                                'name' => 'priority',
-                                'options' => [
-                                    'operator' => '<=',
-                                    'priority' => Logger::INFO,
-                                ],
+                                'priority' => Logger::INFO,
                             ],
                         ],
                     ],

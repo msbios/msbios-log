@@ -8,7 +8,6 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
-        'MSBios\Session',
         'Zend\Session',
         'Zend\Validator',
         'Zend\Mvc\Plugin\FilePrg',
@@ -25,7 +24,9 @@ return [
         'Zend\I18n',
         'Zend\Navigation',
 
+        'MSBios',
         'MSBios\Application',
+        'MSBios\Session',
         'MSBios\Theme',
         'MSBios\Widget',
         'MSBios\View',
@@ -36,6 +37,7 @@ return [
         'MSBios\Log',
 
         'Zend\Log',
+        // 'Jhu\ZdtLoggerModule',
         'ZendDeveloperTools',
     ],
 
