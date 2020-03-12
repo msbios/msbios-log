@@ -7,9 +7,9 @@
 namespace MSBios\Log;
 
 use Interop\Container\ContainerInterface;
-use Zend\Log\Logger;
-use Zend\Log\LoggerAwareInterface;
-use Zend\ServiceManager\Initializer\InitializerInterface;
+use Laminas\Log\Logger;
+use Laminas\Log\LoggerAwareInterface;
+use Laminas\ServiceManager\Initializer\InitializerInterface;
 
 /**
  * Class LoggerAwareInitializer
