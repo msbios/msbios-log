@@ -5,7 +5,7 @@
  */
 namespace MSBios\Log;
 
-use Zend\Stdlib\ArrayUtils;
+use Laminas\Stdlib\ArrayUtils;
 
 /**
  * Class Module
@@ -14,24 +14,24 @@ use Zend\Stdlib\ArrayUtils;
 class Module extends \MSBios\Module
 {
     /** @const VERSION */
-    const VERSION = '1.0.3';
+    const VERSION = '2.0.0';
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      *
      * @return string
      */
-    protected function getDir()
+    protected function getDir(): string
     {
         return __DIR__;
     }
 
     /**
-     * @inheritdoc
+     * @inheritDoc
      *
      * @return string
      */
-    protected function getNamespace()
+    protected function getNamespace(): string
     {
         return __NAMESPACE__;
     }
@@ -44,8 +44,7 @@ class Module extends \MSBios\Module
     public function getConfig()
     {
         return ArrayUtils::merge(
-            parent::getConfig(),
-            [
+            parent::getConfig(), [
                 'service_manager' => (new ConfigProvider)->getDependencyConfig()
             ]
         );

@@ -8,25 +8,10 @@
 return [
     // Retrieve list of modules used in this application.
     'modules' => [
-        'Zend\Session',
         'Zend\Validator',
-        'Zend\Mvc\Plugin\FilePrg',
-        'Zend\Form',
         'Zend\Router',
-        'Zend\Hydrator',
-        'Zend\InputFilter',
-        'Zend\Filter',
-        'Zend\Mvc\Plugin\FlashMessenger',
-        'Zend\Mvc\Plugin\Identity',
-        'Zend\Mvc\Plugin\Prg',
-        'Zend\Cache',
-        'Zend\Serializer',
-        'Zend\I18n',
-        'Zend\Navigation',
-
         'MSBios',
         'MSBios\Application',
-        'MSBios\Session',
         'MSBios\Theme',
         'MSBios\Widget',
         'MSBios\View',
@@ -35,12 +20,10 @@ return [
         'MSBios\I18n',
         'MSBios\Navigation',
         'MSBios\Log',
-
         'Zend\Log',
         // 'Jhu\ZdtLoggerModule',
         'ZendDeveloperTools',
     ],
-
     'module_listener_options' => [
         'module_paths' => [
             './module',
